@@ -1,3 +1,7 @@
-# Scrap the 9 to 5 - Assessment React App
+# ST9T5-Assessment
 
-This assessment is created with React
+## Development Tools
+    This project uses React.js
+
+## Developers
+    Frithjof Thorvik
