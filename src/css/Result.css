@@ -44,7 +44,8 @@
 /* Video Container Styling */
 .result-iframeBox {
   width: 1000px;
-  height: 600px;
+  margin: 25px 0 50px 0;
+  /* height: 600px; */
 }
 .result-iframeContainer {
   position: relative;
@@ -192,7 +193,7 @@
 }
 
 /* Phone Device Styling */
-@media (max-width: 1440px) {
+@media (max-width: 1444px) {
   .result-bodyContent {
     flex-direction: column-reverse;
     align-items: center;
@@ -211,10 +212,6 @@
   .result-iframeContainer {
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
   }
-  .result-left {
-    width: 95%;
-    margin: 0;
-  }
   .result-courseHeader {
     margin: 0;
     padding: 0 10px;
@@ -231,5 +228,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .result-leftMargin {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .result-left {
+    width: 95%;
+    margin: 0;
   }
 }
