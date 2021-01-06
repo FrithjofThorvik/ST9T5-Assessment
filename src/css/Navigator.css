@@ -1,0 +1,42 @@
+.navigator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.navigator-number {
+  font-size: 19px;
+  font-weight: 300;
+  color: #bbbbbb;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.navigator-previous {
+  padding: 5px;
+  transition: all 150ms;
+  cursor: pointer;
+}
+.navigator-next {
+  padding: 5px;
+  transition: all 150ms;
+  cursor: pointer;
+}
+
+.navigator-previous:hover {
+  transform: scale(1.13);
+  transition: all 150ms;
+  color: #9c9c9c;
+}
+
+.navigator-next:hover {
+  transform: scale(1.13);
+  transition: all 150ms;
+  color: #9c9c9c;
+}
+
+.MuiSvgIcon-root {
+  width: 2em !important;
+  height: 2em !important;
+}

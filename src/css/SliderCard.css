@@ -1,0 +1,79 @@
+.sliderCard {
+  background-color: #2e2e2e !important;
+  color: white !important;
+  min-width: 225px;
+  max-width: 225px;
+  height: 300px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 20px !important;
+  border: 1px solid #444;
+  box-shadow: 1px 10px 10px 4px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px 4px rgba(0, 0, 0, 0.5) !important;
+  transition: all 250ms ease-in-out !important;
+  position: relative;
+}
+.sliderCard-header {
+  text-align: center;
+  font-size: 25px !important;
+  font-weight: 700;
+  height: 70px;
+  margin-bottom: 15px !important;
+  transition: all 250ms ease-in-out;
+}
+.sliderCard-body {
+  padding: 15px;
+  height: 60px;
+  margin: auto 0;
+  font-size: 15px !important;
+  text-align: center;
+  white-space: pre;
+  transition: all 250ms ease-in-out;
+}
+.sliderCard-button {
+  display: flex;
+  left: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #2e2e2e !important;
+  width: 150px;
+  height: 50px;
+  margin: 25px auto 10px auto !important;
+  cursor: pointer;
+  border-radius: 10px !important;
+  border: 1px solid #444;
+  box-shadow: 1px 10px 10px 4px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px 3px rgba(0, 0, 0, 0.5) !important;
+  transition: all 250ms ease-in-out !important;
+}
+.sliderCard:hover {
+  border-color: #2c2c2c;
+  transform: scale(0.995);
+  box-shadow: 1px 5px 5px 2px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px 3px rgba(0, 0, 0, 0.5) !important;
+  transition: all 250ms ease-in-out;
+}
+.sliderCard-button:hover {
+  transform: scale(0.995);
+  border-color: #444;
+  box-shadow: 1px 5px 5px 2px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px 3px rgba(0, 0, 0, 0.5) !important;
+  transition: all 250ms ease-in-out;
+}
+.sliderCard:hover .sliderCard-header {
+  border-color: #2c2c2c;
+  transition: all 250ms ease-in-out;
+}
+.sliderCard:hover .sliderCard-body {
+  transition: all 250ms ease-in-out;
+}
+.sliderCard--active {
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.05),
+    inset 0 0 10px 3px rgba(0, 0, 0, 0.5) !important;
+  transition: all 250ms ease-in-out;
+}
+.sliderCard--active .sliderCard-button {
+  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.25),
+    inset 0 0 10px 3px rgba(0, 0, 0, 0.5) !important;
+  transition: all 250ms ease-in-out;
+}

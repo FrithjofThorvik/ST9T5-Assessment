@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #2c2c2c;
+  background-color: #262626;
+  box-shadow: 0 -5px 6px 10px rgba(0, 0, 0, 0.5),
+    inset 0 -10px 10px -5px rgba(0, 0, 0, 0.5);
+  height: 50px;
+  margin-bottom: 40px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+
+.header-navItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 200;
+}

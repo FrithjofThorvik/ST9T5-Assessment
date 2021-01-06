@@ -1,0 +1,54 @@
+.menu {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #2e2e2e !important;
+  min-width: 230px;
+  max-width: 230px;
+  min-height: 300px;
+  padding: 30px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 20px !important;
+  border: 1px solid gray;
+  box-shadow: 1px 10px 10px 4px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px 3px rgba(0, 0, 0, 0.5) !important;
+  transition: all 250ms ease-in-out !important;
+}
+
+.menu-cardHeader {
+  flex: 0.2;
+  color: #999;
+  font-size: 30px !important;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.menu-cardBody {
+  flex: 0.8;
+  font-size: 18px;
+  font-weight: 200;
+  color: white;
+}
+
+.menu-card:hover {
+  border-color: yellowgreen;
+  transform: scale(0.995);
+  box-shadow: 1px 5px 5px 2px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px 3px rgba(0, 0, 0, 0.5) !important;
+  transition: all 250ms ease-in-out;
+}
+
+.menu-card:hover .menu-cardHeader,
+.menu-card:hover .menu-cardBody {
+  color: yellowgreen !important;
+}

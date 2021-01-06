@@ -1,0 +1,115 @@
+.slider {
+  height: 100%;
+}
+.slider-header {
+  margin: 20px auto 50px auto;
+  text-align: center;
+  padding: 15px;
+}
+.slider-header h1 {
+  font-size: 50px;
+  font-weight: 300;
+}
+.slider-header p {
+  margin-top: 15px;
+  color: #aaa;
+  font-weight: 100;
+}
+.slider-headerBorder {
+  width: 70%;
+  margin: 0 auto 20px auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+.slider-body {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 90%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.slider-footerBorder {
+  width: 70%;
+  margin: 20px auto 20px auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -1px 2px 1px rgba(0, 0, 0, 0.3);
+}
+.slider-body::-webkit-scrollbar {
+  display: none;
+}
+.slider-body:after {
+  content: " ";
+  white-space: pre;
+}
+
+/* Video Container */
+.slider-iframeBox {
+  width: 50vw;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.slider-iframeContainer {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid #262626;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.slider-iframeContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Icon */
+.slider-viewMore {
+  text-align: center;
+}
+.slider-viewMore .MuiSvgIcon-root {
+  cursor: pointer;
+  color: #999;
+  transition: all 250ms ease-in-out;
+  width: 5em !important;
+  height: 5em !important;
+}
+.slider-viewMore .MuiSvgIcon-root:hover {
+  transform: scale(0.92);
+  transition: all 250ms ease-in-out;
+  color: #444;
+}
+.slider-recommendedAnchor {
+  padding-top: 50px;
+}
+
+@media (max-width: 640px) {
+  .slider-body {
+    margin: 0 auto;
+    width: auto !important;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .slider-header {
+    font-size: 22px;
+  }
+  .slider-header h1 {
+    font-size: 35px;
+  }
+  .slider-header,
+  .slider-footer {
+    width: 90%;
+  }
+  .slider-iframeBox {
+    width: 90vw;
+  }
+}
