@@ -89,6 +89,8 @@
 }
 .slider-recommendedAnchor {
   padding-top: 50px;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 @media (max-width: 640px) {

@@ -11,6 +11,7 @@ function Test({ location }) {
   const [{ test, contactId }, dispatch] = useStateValue();
   const history = useHistory();
 
+  // Contact Processing useEffect
   useEffect(() => {
     // Connect Session Storage With Test Type
     const processTest = () => {

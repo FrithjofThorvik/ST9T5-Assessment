@@ -92,6 +92,7 @@
   margin: 15px;
   padding: 15px;
   position: absolute;
+  color: #aaa;
   top: 100px;
 }
 .result-right h2 {
@@ -207,6 +208,7 @@
     margin-bottom: 10px;
     padding: 0 20px;
     position: relative;
+    text-align: center;
     top: 0px;
   }
   .result-iframeContainer {

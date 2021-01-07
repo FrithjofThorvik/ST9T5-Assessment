@@ -51,8 +51,7 @@ function Slider({ cardType }) {
             <div className="slider-recommendedAnchor">
               <h1>Your Recommendations</h1>
               <p>
-                We recommend watching this video explaining what you should do
-                next.
+                These are your recommendations ranked from your best match to worst. The rankings does not indicate that you should pick one over the other. Go for the option that suits you best, and try the other ones later.
               </p>
             </div>
           </div>
@@ -61,7 +60,7 @@ function Slider({ cardType }) {
       <div className="slider-headerBorder"></div>
       <div className="slider-body">
         {cardType === "SliderCard" &&
-          recommended?.map((path) => (
+          recommended?.map((path, i) => (
             <SliderCard
               onClick={() => {
                 scroller.scrollTo("result-bodyAnchor", {
@@ -76,6 +75,8 @@ function Slider({ cardType }) {
               title={path.title}
               intro={path.intro}
               description={path.description}
+              rank={i + 1}
+              score={path?.score}
             />
           ))}
       </div>

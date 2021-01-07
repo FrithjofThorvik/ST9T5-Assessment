@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from "@material-ui/core";
 import { useStateValue } from "./StateProvider";
 import "../css/SliderCard.css";
 
-function SliderCard({ id, title, intro, description, ...props }) {
+function SliderCard({ id, title, intro, description, score, rank, ...props }) {
   const [{ activePath }] = useStateValue();
 
   return (
@@ -13,6 +13,15 @@ function SliderCard({ id, title, intro, description, ...props }) {
     >
       <CardContent>
         <Typography className="sliderCard-header">{title}</Typography>
+        {sessionStorage.getItem("sessionTest") === "vault-assessment" && 
+        (
+          <div className="sliderCard-scoreContainer">
+            <Typography className="sliderCard-score">
+              <p>{`Rank: ${rank}`}</p>
+              {/* <p>{`Match: ${Math.ceil(score/12 * 100)}%`}</p> */}
+          </Typography>
+          </div>
+        )}
         <Typography className="sliderCard-body">{intro}</Typography>
         <Typography className="sliderCard-button">View</Typography>
       </CardContent>
