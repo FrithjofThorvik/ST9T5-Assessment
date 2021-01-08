@@ -48,10 +48,11 @@ function Answer() {
                     contactId: sessionStorage.getItem("sessionContactId"),
                     recommended: recommended,
                     answers: answers,
+                    version: 1,
                   }
                 )
                 .then((res) => {
-                  console.log(res);
+                  console.log("Data successfully stored.");
                 });
             } else {
               console.log("Session test was not recorded...");
@@ -78,7 +79,7 @@ function Answer() {
               onClick={() => {
                 // Single Answer Questions
                 if (test.answers[questionNum - 1].select === "single") {
-                  dispatch({ type: "ANSWER", answer: i + 1 });
+                  dispatch({ type: "ANSWER", answer: i });
                   dispatch({ type: "NEXT_QUESTION" });
                 }
 

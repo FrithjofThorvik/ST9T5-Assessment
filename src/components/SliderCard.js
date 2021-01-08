@@ -17,7 +17,7 @@ function SliderCard({ id, title, intro, description, score, rank, ...props }) {
         (
           <div className="sliderCard-scoreContainer">
             <Typography className="sliderCard-score">
-              <p>{`Rank: ${rank}`}</p>
+              {`Rank: ${rank}`}
               {/* <p>{`Match: ${Math.ceil(score/12 * 100)}%`}</p> */}
           </Typography>
           </div>

@@ -4,6 +4,7 @@ import Answer from "./Answer";
 import Navigator from "./Navigator";
 import { useStateValue } from "./StateProvider";
 import { useHistory } from "react-router-dom";
+import { Beforeunload } from "react-beforeunload";
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 import "../css/Test.css";
 
@@ -170,10 +171,12 @@ function Test({ location }) {
       )}
       {test ? (
         <div className="test-container">
-          <div className="test-header">Questions</div>
-          <Question />
-          <Answer />
-          <Navigator />
+          <Beforeunload onBeforeunload={(event) => event.preventDefault()}>
+            <div className="test-header">Questions</div>
+            <Question />
+            <Answer />
+            <Navigator />
+          </Beforeunload>
         </div>
       ) : (
         <div className="test-errorMissingTest">
