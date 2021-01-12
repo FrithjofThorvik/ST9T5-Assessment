@@ -250,7 +250,7 @@ const vaultAssessmentFilter = (answers) => {
   // Eliminate Low Scores
   for (let i = 3; i < recommended.length; i++) {
     if (recommended[i].score < 8) {
-      recommended.removeFromList(recommended, recommended[i].id);
+      recommended = removeFromList(recommended, recommended[i].id);
     }
   }
 
