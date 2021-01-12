@@ -67,7 +67,7 @@ const vaultAssessmentFilter = (answers) => {
 
   // Score Increased
   // A[0], E[1], C[2], P[3], Fo[4], Fr[5], YT[6], B[7]
-  // Question 1, 2, 3, 5, 6
+  // Question 1
   if (answers[0] > 3) {
     recommended[4].score += 1; // Forex
     recommended[1].score += 1; // Ecommerce
@@ -76,12 +76,14 @@ const vaultAssessmentFilter = (answers) => {
     recommended[0].score -= 1; // Affiliate
     recommended[1].score -= 1; // Ecommerce
   }
+  // Question 2
   if (answers[1] === 1) {
     recommended[5].score += 2; // Freelance
     recommended[6].score += 2; // YouTube
     recommended[7].score += 2; // Blog
     recommended[2].score += 1; // Coaching
   }
+  // Question 3
   if (answers[2] > 3) {
     recommended[3].score += 2; // Property
     recommended[4].score += 2; // Forex
@@ -89,6 +91,8 @@ const vaultAssessmentFilter = (answers) => {
     recommended[3].score -= 2; // Property
     recommended[4].score -= 2; // Forex
   }
+  // Question 4 => No Scoring
+  // Question 5
   if (answers[4] === 1) {
     recommended[1].score += 1; // Ecommerce
     recommended[2].score += 2; // Coaching
@@ -96,17 +100,19 @@ const vaultAssessmentFilter = (answers) => {
     recommended[7].score += 2; // Blog
     recommended[5].score += 2; // Freelance
   } else if (answers[4] === 0) {
-    recommended[0].score += 3; // Affiliate
+    recommended[0].score += 1; // Affiliate
     recommended[3].score += 1; // Property
     recommended[4].score += 1; // Forex
   }
+  // Question 6
   if (answers[5] === 1) {
     recommended[1].score += 2; // Ecommerce
     recommended[2].score += 2; // Coaching
     recommended[5].score += 1; // Freelance
   } else if (answers[5] === 0) {
-    recommended[0].score += 3; // Affiliate
+    recommended[0].score += 1; // Affiliate
   }
+  // Question 7 => No Scoring
   // Question 8
   if (answers[7][0] === 1) {
     recommended[0].score += 2; // Affiliate
@@ -117,13 +123,13 @@ const vaultAssessmentFilter = (answers) => {
     recommended[4].score += 2; // Forex
   }
   if (answers[7][1] === 1) {
-    recommended[3].score += 2; // Property
+    recommended[3].score += 3; // Property
   }
   if (answers[7][2] === 1) {
     recommended[2].score += 3; // Coaching
   }
   if (answers[7][3] === 1) {
-    recommended[0].score += 2; // Affiliate
+    recommended[0].score += 1; // Affiliate
     recommended[2].score += 1; // Coaching
     recommended[6].score += 2; // YouTube
     recommended[7].score += 2; // Blog
@@ -148,7 +154,7 @@ const vaultAssessmentFilter = (answers) => {
   }
   if (answers[8][1] === 1) {
     recommended[2].score -= 2; // Coaching
-    recommended[5].score -= 3; // Freelance
+    recommended[5].score -= 2; // Freelance
   }
   if (answers[8][2] === 1) {
     recommended[1].score -= 3; // Ecommerce
@@ -192,14 +198,16 @@ const vaultAssessmentFilter = (answers) => {
     recommended[1].score += 2; // Ecommerce
   }
   if (answers[9][5] === 1) {
-    recommended[3].score += 1; // Property
+    recommended[3].score += 5; // Property
   }
   if (answers[9][6] === 1) {
     recommended[4].score += 3; // Forex
   }
   // Question 11
+  // Answer 1 => No Scoring
+  // Answer 2 => No Scoring
   if (answers[10][2] === 1) {
-    recommended[3].score -= 3; // Property
+    recommended[3].score -= 1; // Property
   }
   if (answers[10][3] === 1) {
     recommended[0].score += 1; // Affiliate
@@ -211,7 +219,7 @@ const vaultAssessmentFilter = (answers) => {
   }
   if (answers[10][4] === 1) {
     recommended[2].score -= 2; // Coaching
-    recommended[5].score -= 3; // Freelance
+    recommended[5].score -= 2; // Freelance
   }
   if (answers[10][5] === 1) {
     recommended[0].score += 1; // Affiliate
@@ -230,29 +238,21 @@ const vaultAssessmentFilter = (answers) => {
   }
   // Score Decreased
 
-  // Eliminating Answers
-  // Question 10
-  if (answers[9][0] === 1) {
-    recommended = removeFromList(recommended, 4); // Property
-    recommended = removeFromList(recommended, 5); // Forex
-  }
-  if (answers[9][1] === 1) {
-    recommended = removeFromList(recommended, 3); // Coaching
-    recommended = removeFromList(recommended, 6); // Freelance
-  }
-  if (answers[9][2] === 1) {
-    recommended = removeFromList(recommended, 2); // Ecommerce
-  }
-  if (answers[9][3] === 1) {
-    recommended = removeFromList(recommended, 3); // Coaching
-    recommended = removeFromList(recommended, 4); // Property
-    recommended = removeFromList(recommended, 6); // Freelance
-  }
+  // Temporary Elimination
+  recommended = removeFromList(recommended, 7); // YouTube (Influencer)
+  recommended = removeFromList(recommended, 8); // Blog (Influencer)
 
   // Sort Recommended by Score
   recommended.sort(function (a, b) {
     return b.score - a.score;
   });
+
+  // Eliminate Low Scores
+  for (let i = 3; i < recommended.length; i++) {
+    if (recommended[i].score < 8) {
+      recommended.removeFromList(recommended, recommended[i].id);
+    }
+  }
 
   return [recommended, message];
 };

@@ -26,10 +26,23 @@ function Result() {
             }
           )
           .then((res) => {
-            console.log(res);
+            handleRedirect();
           });
+      } else {
+        handleRedirect();
       }
+    } else {
+      handleRedirect();
     }
+  };
+
+  // Handle redirect after POST data
+  const handleRedirect = () => {
+    sessionStorage.getItem("sessionEmail") !== null
+      ? (window.location.href = `${
+          activePath.link
+        }?email=${sessionStorage.getItem("sessionEmail")}`)
+      : (window.location.href = activePath.link);
   };
 
   return (
@@ -139,13 +152,7 @@ function Result() {
             <div className="result-nextStep">
               <div
                 onClick={() => {
-                  activePath?.activeTag &&
-                    applyChosenPath(activePath.activeTag);
-                  sessionStorage.getItem("sessionEmail") !== null
-                    ? (window.location.href = `${
-                        activePath.link
-                      }?email=${sessionStorage.getItem("sessionEmail")}`)
-                    : (window.location.href = activePath.link);
+                  activePath?.activeTag ? applyChosenPath(activePath.activeTag) : handleRedirect();
                 }}
                 className="result-nextStepButton"
               >
