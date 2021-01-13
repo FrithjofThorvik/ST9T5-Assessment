@@ -18,7 +18,7 @@ function Navigator() {
       <div className="navigator-number">{questionNum}</div>
       <div
         onClick={() => {
-          if (answers[questionNum - 1]) {
+          if (answers[questionNum - 1] != null) {
             dispatch({ type: "NEXT_QUESTION" });
           } else {
             alert("Please select an answer before advancing...");

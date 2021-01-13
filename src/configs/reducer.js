@@ -248,11 +248,18 @@ const vaultAssessmentFilter = (answers) => {
   });
 
   // Eliminate Low Scores
+  console.log(recommended);
+  let removeId = [];
+
   for (let i = 3; i < recommended.length; i++) {
-    if (recommended[i].score < 8) {
-      recommended = removeFromList(recommended, recommended[i].id);
+    if (recommended[i].score < 5) {
+      removeId.push(recommended[i].id);
     }
   }
+
+  removeId.forEach(id => {
+    recommended = removeFromList(recommended, id);
+  });
 
   return [recommended, message];
 };

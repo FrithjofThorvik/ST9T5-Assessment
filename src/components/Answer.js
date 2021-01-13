@@ -79,7 +79,7 @@ function Answer() {
               onClick={() => {
                 // Single Answer Questions
                 if (test.answers[questionNum - 1].select === "single") {
-                  dispatch({ type: "ANSWER", answer: i });
+                  dispatch({ type: "ANSWER", answer: i});
                   dispatch({ type: "NEXT_QUESTION" });
                 }
 
@@ -112,7 +112,7 @@ function Answer() {
                   ? answers[questionNum - 1][i] === 1
                     ? "answer--selected"
                     : ""
-                  : answers[questionNum - 1] === i + 1
+                  : answers[questionNum - 1] === i
                   ? "answer--selected"
                   : ""
               }
