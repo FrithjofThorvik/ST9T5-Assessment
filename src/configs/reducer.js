@@ -64,6 +64,9 @@ const sfmAssessmentFilter = (answers) => {
 const vaultAssessmentFilter = (answers) => {
   let recommended = vaultAssessmentPaths;
   let message = vaultAssessmentMessage;
+  recommended.forEach(path => {
+    path.score = 0;
+  });
 
   // Score Increased
   // A[0], E[1], C[2], P[3], Fo[4], Fr[5], YT[6], B[7]
@@ -252,7 +255,7 @@ const vaultAssessmentFilter = (answers) => {
   let removeId = [];
 
   for (let i = 3; i < recommended.length; i++) {
-    if (recommended[i].score < 5) {
+    if (recommended[i].score < 3) {
       removeId.push(recommended[i].id);
     }
   }
